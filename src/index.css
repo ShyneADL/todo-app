@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Theme */
+  --veryLightGray: hsl(0, 0%, 98%); 
+  --veryLightGrayishBlue: hsl(236, 33%, 92%);
+  --lightGrayishBlue: hsl(233, 11%, 84%); 
+  --darkGrayishBlue: hsl(236, 9%, 61%);
+  --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+  /* Dark Theme */
+  --veryDarkBlue: hsl(235, 21%, 11%);
+  --veryDarkDesaturatedBlue: hsl(235, 24%, 19%); 
+  --lightGrayishBlue2: hsl(234, 39%, 85%); 
+  --lightGrayishBlueHover: hsl(236, 33%, 92%); 
+  --darkGrayishBlue2: hsl(234, 11%, 52%); 
+  --veryDarkGrayishBlue1: hsl(233, 14%, 35%);
+  --veryDarkGrayishBlue2: hsl(237, 14%, 26%);
+}
+
+body, html  {
+  height: auto;
+}
+
+
+body, html #dark {
+  background: var(--veryDarkBlue);
+  min-height: 100vh;
+
+
+}
+#light {
+  background-color: var(--veryLightGray);
+  min-height: 100vh;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Josefin Sans;
+  transition: background-color 0.5s;
+  box-sizing: border-box;
+}
+
+input {
+  caret-color: hsl(220, 98%, 61%);
+}
+
+.border-dark-mode {
+  border-bottom: 1px solid var(--veryDarkGrayishBlue1);
+}
+
+.border-light-mode {
+  border-bottom: 1px solid var(--lightGrayishBlue);
+}
+
+
+/* .round-btn:hover {
+  border-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-image-slice: 1;
+} */
+
+.outer-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--veryDarkGrayishBlue1);
+  position: relative;
+}
+
+.outer-circle:hover {
+ /* ff 3.6+ */
+ background: -moz-linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%); 
+
+ /* safari 5.1+,chrome 10+ */
+ background: -webkit-linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%);
+
+ /* opera 11.10+ */
+ background: -o-linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%);
+
+ /* ie 6-9 */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C058F3', endColorstr='#57DDFF', GradientType=1 );
+
+ /* ie 10+ */
+ background: -ms-linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%);
+
+ /* global 94%+ browsers support */
+ background: linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%);
+}
+
+.inner-circle {
+  width: 23px;
+  height: 22.7px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+.bg-gradient {
+  /* ff 3.6+ */
+  background: -moz-linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%); 
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%);
+
+  /* opera 11.10+ */
+  background: -o-linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%);
+
+  /* ie 6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C058F3', endColorstr='#57DDFF', GradientType=1 );
+
+  /* ie 10+ */
+  background: -ms-linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%);
+
+  /* global 94%+ browsers support */
+  background: linear-gradient(145deg, rgba(87, 221, 255, 1) 0%, rgba(192, 88, 243, 1) 100%);
+}
+
+.shadow {
+  box-shadow: 0px 8px 32px -3px rgba(0, 0, 0, 0.15);
+}
+
+.todo-list > .close-icon {
+  opacity: 0%;
+  transition: opacity 0.3s;
+}
+.todo-list:hover > .close-icon {
+  opacity: 100%;
+}
+
+.close-svg {
+  transform: scale(0.8);
+}
+
+@media screen and (max-width: 450px) {
+  .todo-list > .close-icon {
+    opacity: 100%;
+  }
+
+  .mark-svg {
+    transform: scale(0.9);
+  }
+}
