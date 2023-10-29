@@ -1,8 +1,7 @@
-import React, {useState,useEffect,createContext} from 'react'
+import React, {useState,useEffect} from 'react'
 import {sun,moon, light,lightM, dark, darkM ,check} from './assets'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 
-export const ThemeContext = createContext(null);
 
 const App = () => {
   const [theme, setTheme] = useState(() => {
@@ -114,10 +113,6 @@ const unmarkAsCompleted = (index) => {
   localStorage.setItem('Todos', JSON.stringify([...todo, updatedCompleted[index]]));
 };
 
-
-
-
-
 const handleSubmit = (e) => {
   e.preventDefault();
   if (inputValue.trim() !== '') {
@@ -181,7 +176,6 @@ useEffect(() => {
 
 
   return (
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
       <div id={theme} className='flex flex-col items-center w-full h-full body sm:mt-[78px] mt-[52px]'>
           <img src={theme === 'dark' ? dark : light} className='sm:flex hidden absolute top-0 left-0 z-[0] w-full'/>
           <img src={theme === 'dark' ? darkM : lightM} className='flex sm:hidden absolute top-0 left-0 z-[0] w-full'/>
@@ -376,7 +370,6 @@ useEffect(() => {
 
         </main>
       </div>
-    </ThemeContext.Provider>
   )
 }
 
